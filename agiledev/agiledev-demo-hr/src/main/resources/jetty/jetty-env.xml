@@ -1,0 +1,15 @@
+<?xml version="1.0"  encoding="utf-8"?>
+<!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN"
+"http://jetty.mortbay.org/cnofigure.dtd">
+<Configure class="org.mortbay.jetty.webapp.WebAppContext">
+	<New id="dataSource1" class="org.mortbay.jetty.plus.naming.Resource">
+		<Arg>jdbc/agiledev</Arg>
+		<Arg>
+			<New class="com.mysql.jdbc.jdbc2.optional.MysqlDataSource">
+				<Set name="url">jdbc:mysql://10.36.16.52:3306/agile</Set>
+				<Set name="user">agile</Set>
+				<Set name="password">agile</Set>
+			</New>
+		</Arg>
+	</New>
+</Configure>  

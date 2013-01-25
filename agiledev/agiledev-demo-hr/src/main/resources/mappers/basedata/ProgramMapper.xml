@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.isoftstone.agiledev.hr.mapper.ProgramMapper">
+	<select id="list" parameterType="map" resultType="com.isoftstone.agiledev.actions.basedata.program.Program">
+		select p.*,t.uid,t.trainName from T_PROGRAMS p left join T_TRAIN t on p.trainId=t.uid where 1=1
+		<if test="name!=null">
+			and p.name like concat('%',#{name[0]},'%')
+		</if>
+		<if test="trainId!=null">
+			and t.uid=#{trainId[0]}			
+		</if>
+		<if test="sort!=null">
+      		ORDER BY #{orderBy}
+    	</if>
+    	LIMIT #{limit},#{offset} 
+	</select>
+	
+	<insert id="save" parameterType="com.isoftstone.agiledev.actions.basedata.program.Program">
+     	INSERT INTO T_PROGRAMS(name,trainId) VALUES(#{name},#{trainId})
+  	</insert>
+	
+	<update id="update" parameterType="com.isoftstone.agiledev.actions.basedata.program.Program">
+	     UPDATE T_PROGRAMS SET name=#{name},trainId=#{trainId} WHERE UID=#{uid}
+	</update>
+	
+	<delete id="remove" parameterType="com.isoftstone.agiledev.actions.basedata.program.Program">
+	     DELETE FROM T_PROGRAMS WHERE UID=#{uid}
+	</delete>
+	
+	<select id="total" resultType="java.lang.Integer">
+	    SELECT COUNT(*) FROM T_PROGRAMS p left join T_TRAIN t on p.trainId=t.uid where 1=1
+	    <if test="name!=null">
+	    	and p.name like concat('%',#{name[0]},'%')
+	    </if>
+	    <if test="trainId!=null">
+			and t.uid=#{trainId[0]}	    	
+	    </if>
+	</select>
+	
+	<select id="unique" parameterType="java.util.HashMap" resultType="com.isoftstone.agiledev.actions.basedata.program.Program">
+		select * from T_PROGRAMS where name=#{name}
+	</select>
+</mapper>
