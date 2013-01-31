@@ -30,7 +30,7 @@
 		</property>
 		<property name="defaultViews">
 			<list>
-				<bean class="com.isoftstone.agiledev.web.springmvc.easyui.EasyUIView">
+				<bean class="com.isoftstone.agiledev.web.springmvc.ligerui.LigerUIView">
 				</bean>
 			</list>
 		</property>
