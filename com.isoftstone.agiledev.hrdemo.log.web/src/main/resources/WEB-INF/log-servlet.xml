@@ -42,7 +42,5 @@
 			</list>
 		</property>
 	</bean>
-	<osgi:reference id="logManager"
-		interface="com.isoftstone.agiledev.hrdemo.log.app.log.ILogManager"
-		bean-name="logManager" />
+	<osgi:reference id="logManager" interface="com.isoftstone.agiledev.hrdemo.log.app.log.ILogManager" bean-name="logManager" />
 </beans>
