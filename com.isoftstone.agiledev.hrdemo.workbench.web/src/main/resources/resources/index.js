@@ -35,7 +35,7 @@ $(function() {
 	$("#tree1").ligerTree({
 		url : 'mvc/menubar/getmenu',
 		checkbox : false,
-		slide : false,
+		slide : true,
 		nodeWidth : 120,
 		attribute : [ 'nodename', 'url' ],
 		onSelect : function(node) {
