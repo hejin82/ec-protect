@@ -15,14 +15,14 @@ public class DBAInitializer {
 	
 	@PreDestroy
 	public void stop() {
-		server.stop();
+//		server.stop();
 	}
 
 	@PostConstruct
 	public void start() {
 		server = new HSQLServer();
-		server.start();
+//		server.start();
 		
-		initDB.execute();
+//		initDB.execute();
 	}
 }

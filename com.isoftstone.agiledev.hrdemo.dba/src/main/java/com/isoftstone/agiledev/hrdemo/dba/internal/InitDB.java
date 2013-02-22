@@ -13,8 +13,8 @@ public class InitDB {
 	private JdbcTemplate jdbcTemplate;
 	
 	public void execute() {
-		createTables();
-		initData();
+//		createTables();
+//		initData();
 	}
 
 	private void initData() {
