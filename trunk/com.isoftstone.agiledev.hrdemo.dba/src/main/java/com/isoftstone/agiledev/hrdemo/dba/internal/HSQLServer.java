@@ -17,11 +17,11 @@ public class HSQLServer {
 		server.setLogWriter(null);
 		server.setErrWriter(null);
 		
-		server.start();
+//		server.start();
 	}
 	
 	public void stop() {
-		server.stop();
+//		server.stop();
 		server = null;
 	}
 }
