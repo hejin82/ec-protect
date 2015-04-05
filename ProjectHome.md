@@ -1,0 +1,1 @@
+利用osgi+maven+spring mvc+mybatis+log4j+slf4j开发电子商务管理系统。
